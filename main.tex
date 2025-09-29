@@ -2,6 +2,7 @@
 
 \usepackage{graphicx} % Ajouté pour l'inclusion des images
 \usepackage{float} % Ajouté pour l'option [H] dans les figures
+\usepackage{hyperref} % Ajouté pour la commande \url
 
 
 
@@ -23,7 +24,6 @@
     \vspace{0.5cm}
     {\Large \textbf{eco-pilot} \par}
     \vspace{2cm}
-    \includegraphics[width=0.4\textwidth]{logo.png}\par % Mets ton logo ici
     \vfill
     \begin{flushright}
         \textbf{Stagiaire :} Mayar Briki \\
@@ -66,7 +66,24 @@ Décrire l’entreprise d’accueil, ses activités principales et son rôle dan
 % TECHNOLOGIES
 % ----------------------
 \chapter{Étude et choix technologiques}
-Présentation du choix de la stack \textbf{MERN (MongoDB, Express, React, Node.js)} et justification.  
+
+Présentation du choix de la stack \textbf{PERN (PostgreSQL, Express, React, Node.js)} et justification.  
+
+\begin{center}
+    \includegraphics[width=0.4\textwidth]{1_ptqverAyBpdfUDhrs2g_3A.jpg} % Mets ton logo ici
+\end{center}
+
+\section*{Justification du choix de la stack PERN}
+
+La stack \textbf{PERN} (PostgreSQL, Express, React, Node.js) a été choisie pour plusieurs raisons :  
+
+\begin{itemize}
+    \item \textbf{JavaScript full-stack :} Avec Node.js et React, le même langage est utilisé côté serveur et côté client, ce qui simplifie le développement et la maintenance.
+    \item \textbf{Base de données relationnelle robuste :} PostgreSQL offre une gestion avancée des données, des relations complexes et une grande fiabilité pour les applications critiques.
+    \item \textbf{Performance et scalabilité :} Node.js, grâce à son modèle non-bloquant et orienté événement, permet de gérer efficacement un grand nombre de requêtes simultanées.
+    \item \textbf{Flexibilité et modularité :} Express.js facilite la création d’API RESTful flexibles, tandis que React permet de construire une interface utilisateur dynamique et réactive.
+    \item \textbf{Écosystème riche :} Chaque composant de la stack dispose d’une communauté active et de nombreux packages, accélérant le développement et l’intégration de fonctionnalités avancées.
+\end{itemize}
 
 % ----------------------
 % CONCEPTION
