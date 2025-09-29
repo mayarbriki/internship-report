@@ -1,0 +1,34 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}{}%
+\contentsline {chapter}{\numberline {2}Présentation de l’entreprise}{4}{}%
+\contentsline {chapter}{\numberline {3}Présentation générale du projet eco-pilote}{5}{}%
+\contentsline {section}{\numberline {3.1}Contexte et objectifs}{5}{}%
+\contentsline {section}{\numberline {3.2}Utilisateurs cibles}{5}{}%
+\contentsline {section}{\numberline {3.3}Fonctionnalités principales}{5}{}%
+\contentsline {chapter}{\numberline {4}Cahier des charges}{6}{}%
+\contentsline {section}{\numberline {4.1}Besoins fonctionnels}{6}{}%
+\contentsline {section}{\numberline {4.2}Besoins techniques}{6}{}%
+\contentsline {section}{\numberline {4.3}Contraintes}{6}{}%
+\contentsline {chapter}{\numberline {5}Étude et choix technologiques}{7}{}%
+\contentsline {chapter}{\numberline {6}Conception du projet}{8}{}%
+\contentsline {section}{\numberline {6.1}Architecture de l’application}{8}{}%
+\contentsline {section}{\numberline {6.2}Diagrammes UML}{8}{}%
+\contentsline {section}{\numberline {6.3}Modèle de la base de données}{8}{}%
+\contentsline {chapter}{\numberline {7}Implémentation}{10}{}%
+\contentsline {section}{\numberline {7.1}Backend (Node.js + Express)}{10}{}%
+\contentsline {section}{\numberline {7.2}Frontend (React)}{10}{}%
+\contentsline {section}{\numberline {7.3}Base de données (MongoDB)}{10}{}%
+\contentsline {section}{\numberline {7.4}Sécurité et authentification (JWT, hashage)}{10}{}%
+\contentsline {section}{\numberline {7.5}Tests et validation}{10}{}%
+\contentsline {chapter}{\numberline {8}Déploiement}{11}{}%
+\contentsline {section}{\numberline {8.1}Environnement de développement}{11}{}%
+\contentsline {section}{\numberline {8.2}Environnement de production}{11}{}%
+\contentsline {section}{\numberline {8.3}Gestion de versions (Git/GitHub)}{11}{}%
+\contentsline {section}{\numberline {8.4}CI/CD (si applicable)}{11}{}%
+\contentsline {chapter}{\numberline {9}Résultats obtenus}{12}{}%
+\contentsline {chapter}{\numberline {10}Difficultés rencontrées et solutions}{13}{}%
+\contentsline {chapter}{\numberline {11}Perspectives d’amélioration}{14}{}%
+\contentsline {chapter}{\numberline {12}Conclusion}{15}{}%
+\contentsline {chapter}{\numberline {A}Annexes}{16}{}%
+\contentsline {section}{\numberline {A.1}Extraits de code}{16}{}%
+\contentsline {section}{\numberline {A.2}Documentation API}{16}{}%
+\contentsline {section}{\numberline {A.3}Diagrammes complets}{16}{}%
