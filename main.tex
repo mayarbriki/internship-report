@@ -178,9 +178,25 @@ Ce diagramme met en évidence la structure relationnelle de l’application et s
 % ----------------------
 \chapter{Déploiement}
 \section{Environnement de développement}
+
+Le développement s’est effectué localement sur des machines équipées de Node.js, npm et PostgreSQL. Le code source est versionné avec Git et organisé en deux répertoires principaux : \texttt{client} (React) et \texttt{server} (Node.js/Express). Les variables d’environnement sont gérées via des fichiers \texttt{.env} pour séparer les configurations locales et de production.
+
 \section{Environnement de production}
+
+Pour le déploiement de l’application, deux plateformes cloud distinctes ont été utilisées afin de séparer le frontend et le backend :
+
+\begin{itemize}
+    \item \textbf{Frontend (React) :} Déployé sur \textbf{Vercel}, une plateforme spécialisée dans l’hébergement d’applications front-end modernes. Vercel offre un déploiement continu à partir du dépôt GitHub, une gestion automatique des builds, un CDN performant et des URLs de prévisualisation pour chaque branche ou pull request. Cela permet de garantir une mise en ligne rapide et fiable de l’interface utilisateur.
+    \item \textbf{Backend (Node.js/Express) :} Hébergé sur \textbf{Render}, un service cloud qui facilite le déploiement d’API Node.js. Render gère automatiquement le scaling, la surveillance, les redémarrages en cas de panne et l’intégration continue. La connexion à la base de données PostgreSQL est également configurée sur Render, assurant la sécurité et la disponibilité des données.
+\end{itemize}
+
+La communication entre le frontend (Vercel) et le backend (Render) se fait via des appels API sécurisés (HTTPS). Les variables d’environnement de production sont configurées directement sur les tableaux de bord Vercel et Render pour garantir la confidentialité des clés et des accès.
+
 \section{Gestion de versions (Git/GitHub)}
+% ...existing code...
+
 \section{CI/CD (si applicable)}
+% ...existing code...
 
 % ----------------------
 % RÉSULTATS
