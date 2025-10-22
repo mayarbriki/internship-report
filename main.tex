@@ -2,7 +2,7 @@
 
 \usepackage{graphicx} % Ajouté pour l'inclusion des images
 \usepackage{float} % Ajouté pour l'option [H] dans les figures
-\usepackage{hyperref} % Ajouté pour la commande \url
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black]{hyperref}
 
 
 
@@ -40,6 +40,14 @@
     %\hspace*{0pt}\includegraphics[width=0.18\textwidth]{Logo_ESPRIT_Ariana.jpg}
 \end{titlepage}
 
+\tableofcontents
+
+% ----------------------
+% RÉSUMÉ
+% ----------------------
+\chapter*{Résumé}
+\addcontentsline{toc}{chapter}{Résumé}
+Ce rapport présente le développement d’un logiciel de chiffrage, \textbf{eco-pilot}, réalisé dans le cadre d’un stage de deux mois. L’application vise à faciliter la gestion de projets et de budgets pour les professionnels, en proposant des fonctionnalités avancées telles que la gestion des utilisateurs, des articles, des projets et des budgets. Le choix de la stack PERN (PostgreSQL, Express, React, Node.js) garantit robustesse, évolutivité et performance. Ce document détaille le contexte, les besoins, la conception, l’implémentation, le déploiement, les résultats obtenus, les difficultés rencontrées et les perspectives d’amélioration du projet.
 
 % ----------------------
 % INTRODUCTION

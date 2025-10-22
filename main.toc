@@ -1,0 +1,33 @@
+\contentsline {chapter}{Résumé}{3}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Présentation générale du projet }{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Contexte et objectifs}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Utilisateurs cibles}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Fonctionnalités principales}{6}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Cahier des charges}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Besoins fonctionnels}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Besoins techniques}{7}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Contraintes}{10}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Étude et choix technologiques}{11}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conception du projet}{14}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Architecture de l’application}{14}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Diagrammes UML}{14}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Modèle de la base de données}{15}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Implémentation}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Backend (Node.js + Express)}{17}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Frontend (React)}{17}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Base de données (PostgreSQL)}{18}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Sécurité et authentification (JWT, hashage)}{18}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Tests et validation}{18}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Déploiement}{19}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Environnement de développement}{19}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Environnement de production}{19}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Gestion de versions (Git/GitHub)}{20}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Résultats obtenus}{21}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Difficultés rencontrées et solutions}{22}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Perspectives d’amélioration}{23}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Conclusion}{24}{chapter.11}%
+\contentsline {chapter}{\numberline {A}Annexes}{25}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Extraits de code}{25}{section.A.1}%
+\contentsline {section}{\numberline {A.2}Documentation API}{25}{section.A.2}%
+\contentsline {section}{\numberline {A.3}Diagrammes complets}{26}{section.A.3}%
