@@ -139,10 +139,28 @@ Inclure un schéma de l’architecture PERN.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{image.png}
-    \caption{Enter Caption}
+    \caption{Diagramme UML principal de l’application}
     \label{fig:placeholder}
 \end{figure}
 
+\textbf{Description du diagramme~:}
+
+Le diagramme UML ci-dessus illustre l’architecture principale de l’application \textbf{eco-pilot}. On y distingue les entités essentielles et leurs relations :
+
+\begin{itemize}
+    \item \textbf{Utilisateur (User) :} Représente les différents profils accédant à l’application (administrateur, chef de projet, membre technique, etc.). Chaque utilisateur possède des attributs comme l’identifiant, le nom, l’email, le mot de passe (hashé) et un rôle.
+    \item \textbf{Projet (Project) :} Entité centrale du système, chaque projet est associé à un ou plusieurs utilisateurs (gestion de l’équipe projet), à un budget, à des articles et à un état d’avancement.
+    \item \textbf{Article :} Représente les ressources, matériaux ou prestations nécessaires à la réalisation des projets. Chaque article possède des informations telles que le nom, la description, le coût unitaire et le stock disponible.
+    \item \textbf{Budget :} Associé à chaque projet, il permet de suivre les coûts prévus et réels, ainsi que les écarts éventuels.
+    \item \textbf{Relations :} 
+    \begin{itemize}
+        \item Un utilisateur peut participer à plusieurs projets, et un projet peut avoir plusieurs utilisateurs (relation plusieurs-à-plusieurs).
+        \item Un projet peut contenir plusieurs articles, chaque article pouvant être utilisé dans plusieurs projets (relation plusieurs-à-plusieurs).
+        \item Chaque projet dispose d’un budget unique, mais le modèle peut être étendu pour gérer des budgets intermédiaires ou par lot.
+    \end{itemize}
+\end{itemize}
+
+Ce diagramme met en évidence la structure relationnelle de l’application et sert de base à la conception de la base de données et des API.
 \section{Modèle de la base de données}
 
 % ----------------------
