@@ -78,6 +78,19 @@ Les principales fonctionnalités du projet incluent :
 % ----------------------
 \chapter{Cahier des charges}
 \section{Besoins fonctionnels}
+
+Les besoins fonctionnels de l’application \textbf{eco-pilot} sont les suivants :
+\begin{itemize}
+    \item Authentification et gestion sécurisée des utilisateurs (inscription, connexion, gestion des rôles).
+    \item Gestion des projets : création, modification, suppression, consultation.
+    \item Gestion des articles : ajout, modification, suppression, recherche et consultation.
+    \item Gestion des budgets associés aux projets, suivi des coûts prévus et réels.
+    \item Attribution des utilisateurs aux projets et gestion des droits d’accès.
+    \item Visualisation de l’avancement des projets (tableaux de bord, graphiques).
+    \item Historique des actions et traçabilité.
+    \item Exportation de rapports (PDF, Excel).
+\end{itemize}
+
 \section{Besoins techniques}
 
 Pour garantir le bon fonctionnement et la maintenabilité de l’application \textbf{eco-pilot}, plusieurs besoins techniques ont été identifiés et structurés autour des axes suivants :
@@ -135,6 +148,15 @@ Pour garantir le bon fonctionnement et la maintenabilité de l’application \te
 Ces besoins techniques assurent la robustesse, la sécurité, la performance et l’évolutivité de la solution développée, tout en facilitant la collaboration et la maintenance sur le long terme.
 
 \section{Contraintes}
+
+\begin{itemize}
+    \item Respect des délais de livraison du projet (2 mois).
+    \item Respect des normes de sécurité et de confidentialité des données.
+    \item Compatibilité multiplateforme (navigateurs récents, systèmes d’exploitation courants).
+    \item Utilisation exclusive de technologies open-source.
+    \item Facilité de prise en main et d’utilisation pour les utilisateurs finaux.
+    \item Documentation technique et utilisateur à fournir.
+\end{itemize}
 
 % ----------------------
 % TECHNOLOGIES
@@ -218,15 +240,74 @@ Le diagramme UML ci-dessus illustre l’architecture principale de l’applicati
 Ce diagramme met en évidence la structure relationnelle de l’application et sert de base à la conception de la base de données et des API.
 \section{Modèle de la base de données}
 
+Le modèle de la base de données repose sur une structure relationnelle adaptée à la gestion de projets, d’utilisateurs, d’articles et de budgets. Voici un aperçu des principales tables et de leurs relations :
+
+\begin{itemize}
+    \item \textbf{users} (\texttt{id}, \texttt{name}, \texttt{email}, \texttt{password\_hash}, \texttt{role})
+    \item \textbf{projects} (\texttt{id}, \texttt{name}, \texttt{description}, \texttt{status}, \texttt{budget\_id})
+    \item \textbf{articles} (\texttt{id}, \texttt{name}, \texttt{description}, \texttt{unit\_cost}, \texttt{stock})
+    \item \textbf{budgets} (\texttt{id}, \texttt{project\_id}, \texttt{planned\_cost}, \texttt{actual\_cost})
+    \item \textbf{project\_users} (\texttt{project\_id}, \texttt{user\_id})
+    \item \textbf{project\_articles} (\texttt{project\_id}, \texttt{article\_id}, \texttt{quantity})
+\end{itemize}
+
+Les relations principales sont :
+\begin{itemize}
+    \item Un utilisateur peut participer à plusieurs projets (relation plusieurs-à-plusieurs via \texttt{project\_users}).
+    \item Un projet peut contenir plusieurs articles (relation plusieurs-à-plusieurs via \texttt{project\_articles}).
+    \item Chaque projet dispose d’un budget unique.
+\end{itemize}
+
 % ----------------------
 % IMPLÉMENTATION
 % ----------------------
 \chapter{Implémentation}
 \section{Backend (Node.js + Express)}
+
+Le backend est développé avec Node.js et Express. Il expose une API RESTful permettant la gestion des utilisateurs, des projets, des articles et des budgets. Les principales fonctionnalités implémentées sont :
+\begin{itemize}
+    \item Authentification JWT et gestion des rôles.
+    \item Endpoints CRUD pour les entités principales (utilisateurs, projets, articles, budgets).
+    \item Middleware de sécurité (helmet, cors).
+    \item Validation des données avec Joi.
+    \item Gestion des erreurs centralisée.
+    \item Documentation de l’API avec Swagger.
+\end{itemize}
+
 \section{Frontend (React)}
-\section{Base de données (MongoDB)}
+
+Le frontend est réalisé avec React. Il propose une interface utilisateur moderne et réactive :
+\begin{itemize}
+    \item Authentification et gestion de session.
+    \item Tableaux de bord pour la visualisation des projets, budgets et articles.
+    \item Formulaires dynamiques pour la création et la modification des entités.
+    \item Visualisation graphique de l’avancement des projets (charts).
+    \item Gestion des notifications et des erreurs.
+    \item Responsive design pour une utilisation sur desktop et mobile.
+\end{itemize}
+
+\section{Base de données (PostgreSQL)}
+
+La base de données PostgreSQL stocke toutes les informations relatives aux utilisateurs, projets, articles et budgets. Les scripts de migration permettent de créer et de mettre à jour le schéma de la base. Des index sont ajoutés pour optimiser les requêtes fréquentes.
+
 \section{Sécurité et authentification (JWT, hashage)}
+
+\begin{itemize}
+    \item Authentification basée sur JWT pour sécuriser les endpoints.
+    \item Hashage des mots de passe avec bcrypt.
+    \item Vérification des rôles et des permissions pour chaque action sensible.
+    \item Protection contre les attaques courantes (XSS, CSRF, injections SQL).
+    \item Utilisation de HTTPS en production.
+\end{itemize}
+
 \section{Tests et validation}
+
+\begin{itemize}
+    \item Tests unitaires sur les fonctions critiques du backend (Jest).
+    \item Tests d’intégration des endpoints API (Supertest).
+    \item Validation manuelle de l’interface utilisateur.
+    \item Vérification de la conformité aux besoins fonctionnels.
+\end{itemize}
 
 % ----------------------
 % DÉPLOIEMENT
@@ -248,33 +329,64 @@ Pour le déploiement de l’application, deux plateformes cloud distinctes ont �
 La communication entre le frontend (Vercel) et le backend (Render) se fait via des appels API sécurisés (HTTPS). Les variables d’environnement de production sont configurées directement sur les tableaux de bord Vercel et Render pour garantir la confidentialité des clés et des accès.
 
 \section{Gestion de versions (Git/GitHub)}
-% ...existing code...
 
-% ...existing code...
+Le projet est versionné avec Git et hébergé sur GitHub. Les branches principales sont :
+\begin{itemize}
+    \item \texttt{main} : version stable et déployée.
+    \item \texttt{dev} : développement des nouvelles fonctionnalités.
+    \item branches de fonctionnalités : pour chaque nouvelle fonctionnalité ou correction de bug.
+\end{itemize}
+Des pull requests sont utilisées pour la revue de code et l’intégration continue.
 
 % ----------------------
 % RÉSULTATS
 % ----------------------
 \chapter{Résultats obtenus}
-Inclure captures d’écran de l’application (ex. page de connexion, tableau de bord).  
+
+L’application \textbf{eco-pilot} a permis de :
+\begin{itemize}
+    \item Centraliser la gestion des projets, des articles et des budgets.
+    \item Améliorer la traçabilité et la transparence des coûts.
+    \item Offrir une interface intuitive pour les différents profils d’utilisateurs.
+    \item Réduire les erreurs de saisie et accélérer la prise de décision grâce aux tableaux de bord.
+\end{itemize}
+
+
+
 
 % ----------------------
 % DIFFICULTÉS ET SOLUTIONS
 % ----------------------
 \chapter{Difficultés rencontrées et solutions}
-Lister les problèmes techniques et organisationnels rencontrés ainsi que leurs solutions.  
+
+\begin{itemize}
+    \item \textbf{Problème de synchronisation entre frontend et backend :} Résolu par la mise en place d’une documentation Swagger et de tests d’intégration.
+    \item \textbf{Gestion des rôles complexe :} Utilisation d’un middleware de vérification des permissions pour chaque endpoint.
+    \item \textbf{Déploiement sur Render et Vercel :} Adaptation des variables d’environnement et gestion des CORS.
+    \item \textbf{Optimisation des requêtes SQL :} Ajout d’index et refactoring des requêtes lentes.
+    \item \textbf{Formation des utilisateurs :} Rédaction d’un guide utilisateur et organisation de sessions de démonstration.
+\end{itemize}
 
 % ----------------------
 % PERSPECTIVES
 % ----------------------
 \chapter{Perspectives d’amélioration}
-Améliorations techniques et fonctionnelles possibles.  
+
+\begin{itemize}
+    \item Ajout d’un module de notifications en temps réel (WebSocket).
+    \item Intégration d’un système de gestion documentaire (upload de fichiers).
+    \item Extension du modèle de budget pour gérer des sous-budgets par lot ou phase.
+    \item Mise en place d’un système de commentaires et de suivi des tâches.
+    \item Internationalisation de l’interface (multilingue).
+    \item Automatisation des tests end-to-end (Cypress).
+\end{itemize}
 
 % ----------------------
 % CONCLUSION
 % ----------------------
 \chapter{Conclusion}
-Bilan global du stage, apports professionnels et personnels.  
+
+Ce stage m’a permis de mettre en pratique mes compétences en développement web full-stack, de découvrir les enjeux de la gestion de projets et d’approfondir mes connaissances sur la stack PERN. J’ai pu contribuer à la conception, au développement et au déploiement d’une application complète, tout en apprenant à travailler en équipe et à respecter des contraintes professionnelles. Cette expérience a renforcé mon autonomie, ma rigueur et ma capacité à résoudre des problèmes techniques complexes.
 
 % ----------------------
 % ANNEXES
@@ -282,8 +394,28 @@ Bilan global du stage, apports professionnels et personnels.
 \appendix
 \chapter{Annexes}
 \section{Extraits de code}
+
+\begin{verbatim}
+// Exemple d’endpoint Express pour la création d’un utilisateur
+app.post('/api/users', async (req, res) => {
+    // Validation des données
+    // Hashage du mot de passe
+    // Insertion dans la base de données
+});
+\end{verbatim}
+
 \section{Documentation API}
+
+La documentation complète de l’API est disponible via Swagger à l’adresse :\\
+\url{https://eco-pilot-api-docs.example.com}
+
 \section{Diagrammes complets}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{image.png}
+    \caption{Diagramme UML complet de l’application}
+\end{figure}
 
 % ----------------------
 % BIBLIOGRAPHIE
@@ -292,12 +424,9 @@ Bilan global du stage, apports professionnels et personnels.
 \bibitem{mern} Documentation officielle MERN : \url{https://www.mongodb.com/mern-stack}
 \bibitem{react} Documentation React : \url{https://react.dev}
 \bibitem{node} Documentation Node.js : \url{https://nodejs.org}
+\bibitem{express} Documentation Express : \url{https://expressjs.com}
+\bibitem{postgres} Documentation PostgreSQL : \url{https://www.postgresql.org/docs/}
+\bibitem{jwt} JWT Introduction : \url{https://jwt.io/introduction}
 \end{thebibliography}
-
-\end{document}
-
-
-\section{Introduction}
-
 
 \end{document}
