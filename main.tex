@@ -79,6 +79,55 @@ Les principales fonctionnalités du projet incluent :
 \chapter{Cahier des charges}
 \section{Besoins fonctionnels}
 \section{Besoins techniques}
+
+Pour garantir le bon fonctionnement et la maintenabilité de l’application \textbf{eco-pilot}, plusieurs besoins techniques ont été identifiés :
+
+\begin{itemize}
+    \item \textbf{Environnement de développement :}
+    \begin{itemize}
+        \item Ordinateur avec système d’exploitation moderne (Windows, macOS ou Linux)
+        \item Installation de Node.js (version 16 ou supérieure) et npm
+        \item Installation de PostgreSQL (version 13 ou supérieure)
+        \item Navigateur web moderne (Chrome, Firefox, Edge)
+        \item Outils de gestion de version (Git)
+        \item Éditeur de code (Visual Studio Code recommandé)
+    \end{itemize}
+    \item \textbf{Architecture logicielle :}
+    \begin{itemize}
+        \item Application structurée en deux parties distinctes : frontend (React) et backend (Node.js/Express)
+        \item API RESTful pour la communication entre le frontend et le backend
+        \item Base de données relationnelle PostgreSQL pour la gestion des données
+        \item Gestion des variables d’environnement via fichiers \texttt{.env}
+    \end{itemize}
+    \item \textbf{Sécurité :}
+    \begin{itemize}
+        \item Authentification sécurisée (JWT)
+        \item Hashage des mots de passe (bcrypt ou équivalent)
+        \item Protection contre les attaques courantes (XSS, CSRF, injections SQL)
+        \item Utilisation du protocole HTTPS en production
+    \end{itemize}
+    \item \textbf{Déploiement et hébergement :}
+    \begin{itemize}
+        \item Hébergement du frontend sur Vercel
+        \item Hébergement du backend sur Render
+        \item Configuration des variables d’environnement sur les plateformes cloud
+        \item Accès à une base de données PostgreSQL hébergée (Render ou équivalent)
+    \end{itemize}
+    \item \textbf{Tests et qualité :}
+    \begin{itemize}
+        \item Mise en place de tests unitaires et d’intégration (Jest, Supertest)
+        \item Utilisation d’outils d’analyse de code et de linters (ESLint, Prettier)
+        \item Documentation technique et API (Swagger ou équivalent)
+    \end{itemize}
+    \item \textbf{Scalabilité et maintenance :}
+    \begin{itemize}
+        \item Architecture modulaire pour faciliter l’ajout de nouvelles fonctionnalités
+        \item Possibilité de scaling horizontal/vertical sur Render et Vercel
+        \item Sauvegarde régulière de la base de données
+    \end{itemize}
+\end{itemize}
+
+Ces besoins techniques assurent la robustesse, la sécurité et l’évolutivité de la solution développée.
 \section{Contraintes}
 
 % ----------------------
