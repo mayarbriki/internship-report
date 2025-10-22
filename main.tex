@@ -80,54 +80,60 @@ Les principales fonctionnalités du projet incluent :
 \section{Besoins fonctionnels}
 \section{Besoins techniques}
 
-Pour garantir le bon fonctionnement et la maintenabilité de l’application \textbf{eco-pilot}, plusieurs besoins techniques ont été identifiés :
+Pour garantir le bon fonctionnement et la maintenabilité de l’application \textbf{eco-pilot}, plusieurs besoins techniques ont été identifiés et structurés autour des axes suivants :
 
 \begin{itemize}
     \item \textbf{Environnement de développement :}
     \begin{itemize}
-        \item Ordinateur avec système d’exploitation moderne (Windows, macOS ou Linux)
-        \item Installation de Node.js (version 16 ou supérieure) et npm
-        \item Installation de PostgreSQL (version 13 ou supérieure)
-        \item Navigateur web moderne (Chrome, Firefox, Edge)
-        \item Outils de gestion de version (Git)
-        \item Éditeur de code (Visual Studio Code recommandé)
+        \item Ordinateur avec système d’exploitation moderne (Windows, macOS ou Linux) et ressources suffisantes (RAM, CPU) pour supporter les outils de développement.
+        \item Installation de Node.js (version 16 ou supérieure) et npm pour la gestion des dépendances et l’exécution du backend.
+        \item Installation de PostgreSQL (version 13 ou supérieure) pour la gestion locale de la base de données relationnelle.
+        \item Navigateur web moderne (Chrome, Firefox, Edge) pour le développement et les tests du frontend.
+        \item Outils de gestion de version (Git) pour le suivi collaboratif du code source.
+        \item Éditeur de code performant (Visual Studio Code recommandé) avec extensions pour JavaScript/TypeScript, linting et gestion des environnements.
     \end{itemize}
     \item \textbf{Architecture logicielle :}
     \begin{itemize}
-        \item Application structurée en deux parties distinctes : frontend (React) et backend (Node.js/Express)
-        \item API RESTful pour la communication entre le frontend et le backend
-        \item Base de données relationnelle PostgreSQL pour la gestion des données
-        \item Gestion des variables d’environnement via fichiers \texttt{.env}
+        \item Séparation stricte entre le frontend (React) et le backend (Node.js/Express) pour une meilleure maintenabilité et évolutivité.
+        \item Utilisation d’une API RESTful pour la communication entre les deux couches.
+        \item Base de données relationnelle PostgreSQL pour la gestion structurée et fiable des données.
+        \item Gestion des variables d’environnement via fichiers \texttt{.env} pour séparer les configurations locales, de test et de production.
+        \item Respect des bonnes pratiques de structuration des dossiers et du code (architecture modulaire, séparation des responsabilités).
     \end{itemize}
     \item \textbf{Sécurité :}
     \begin{itemize}
-        \item Authentification sécurisée (JWT)
-        \item Hashage des mots de passe (bcrypt ou équivalent)
-        \item Protection contre les attaques courantes (XSS, CSRF, injections SQL)
-        \item Utilisation du protocole HTTPS en production
+        \item Authentification sécurisée basée sur JWT (JSON Web Token) pour la gestion des sessions utilisateurs.
+        \item Hashage des mots de passe avec bcrypt ou équivalent pour garantir la confidentialité des données sensibles.
+        \item Mise en place de middlewares de sécurité (helmet, cors) pour protéger l’API contre les attaques courantes (XSS, CSRF, injections SQL).
+        \item Utilisation du protocole HTTPS en production pour chiffrer les échanges de données.
+        \item Gestion des droits d’accès et des rôles utilisateurs pour limiter l’accès aux ressources sensibles.
     \end{itemize}
     \item \textbf{Déploiement et hébergement :}
     \begin{itemize}
-        \item Hébergement du frontend sur Vercel
-        \item Hébergement du backend sur Render
-        \item Configuration des variables d’environnement sur les plateformes cloud
-        \item Accès à une base de données PostgreSQL hébergée (Render ou équivalent)
+        \item Hébergement du frontend sur Vercel, permettant le déploiement continu, la gestion des builds et la distribution via CDN.
+        \item Hébergement du backend sur Render, avec gestion automatique du scaling, de la surveillance et des redémarrages.
+        \item Configuration des variables d’environnement et des secrets sur les plateformes cloud pour garantir la sécurité des accès.
+        \item Accès à une base de données PostgreSQL hébergée (Render ou équivalent) avec sauvegardes automatiques.
+        \item Possibilité de rollback rapide en cas de problème lors d’un déploiement.
     \end{itemize}
-    \item \textbf{Tests et qualité :}
+    \item \textbf{Tests et qualité logicielle :}
     \begin{itemize}
-        \item Mise en place de tests unitaires et d’intégration (Jest, Supertest)
-        \item Utilisation d’outils d’analyse de code et de linters (ESLint, Prettier)
-        \item Documentation technique et API (Swagger ou équivalent)
+        \item Mise en place de tests unitaires et d’intégration (Jest, Supertest) pour garantir la fiabilité du code.
+        \item Utilisation d’outils d’analyse statique et de linters (ESLint, Prettier) pour assurer la qualité et la cohérence du code.
+        \item Documentation technique et API (Swagger ou équivalent) pour faciliter la maintenance et l’intégration de nouveaux développeurs.
+        \item Intégration continue (CI) pour automatiser les tests et les déploiements.
     \end{itemize}
-    \item \textbf{Scalabilité et maintenance :}
+    \item \textbf{Scalabilité, performance et maintenance :}
     \begin{itemize}
-        \item Architecture modulaire pour faciliter l’ajout de nouvelles fonctionnalités
-        \item Possibilité de scaling horizontal/vertical sur Render et Vercel
-        \item Sauvegarde régulière de la base de données
+        \item Architecture modulaire et découplée pour faciliter l’ajout de nouvelles fonctionnalités ou la modification de modules existants.
+        \item Possibilité de scaling horizontal/vertical sur Render et Vercel pour s’adapter à la montée en charge.
+        \item Mise en place de logs et de monitoring pour détecter rapidement les anomalies et optimiser les performances.
+        \item Sauvegarde régulière de la base de données et plan de reprise en cas d’incident.
     \end{itemize}
 \end{itemize}
 
-Ces besoins techniques assurent la robustesse, la sécurité et l’évolutivité de la solution développée.
+Ces besoins techniques assurent la robustesse, la sécurité, la performance et l’évolutivité de la solution développée, tout en facilitant la collaboration et la maintenance sur le long terme.
+
 \section{Contraintes}
 
 % ----------------------
@@ -244,7 +250,6 @@ La communication entre le frontend (Vercel) et le backend (Render) se fait via d
 \section{Gestion de versions (Git/GitHub)}
 % ...existing code...
 
-\section{CI/CD (si applicable)}
 % ...existing code...
 
 % ----------------------
