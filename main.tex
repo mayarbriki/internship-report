@@ -1,8 +1,10 @@
 \documentclass[12pt,a4paper]{report}
 
+
 \usepackage{graphicx} % Ajouté pour l'inclusion des images
 \usepackage{float} % Ajouté pour l'option [H] dans les figures
 \usepackage[colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=black]{hyperref}
+\usepackage{pdfpages} % Ajouté pour l'inclusion des pages PDF
 
 
 
@@ -398,9 +400,36 @@ Ce stage m’a permis de mettre en pratique mes compétences en développement w
 
 % ----------------------
 % ANNEXES
+
 % ----------------------
 \appendix
 \chapter{Annexes}
+
+\section{Démonstration de l'application}
+Les pages suivantes présentent la démonstration de l'application à travers des captures PDF :
+\begin{itemize}
+    \item FireShot Capture 021 - Eco-Pilot - www.eco-pilot.com.pdf
+    \item FireShot Capture 022 - Eco-Pilot - www.eco-pilot.com.pdf
+    \item FireShot Capture 023 - Eco-Pilot - www.eco-pilot.com.pdf
+    \item FireShot Capture 024 - Eco-Pilot - www.eco-pilot.com.pdf
+    \item FireShot Capture 025 - Eco-Pilot - www.eco-pilot.com.pdf
+    \item FireShot Capture 026 - Eco-Pilot - www.eco-pilot.com.pdf
+\end{itemize}
+
+
+% Insertion des pages PDF (une page par fichier) avec titre sur la même page
+\includepdf[pages=-,pagecommand={\section*{Page d'accueil de l'application}}]{FireShot Capture 021 - Eco-Pilot - www.eco-pilot.com.pdf}
+
+\includepdf[pages=-,pagecommand={\section*{Page de connexion}}]{FireShot Capture 022 - Eco-Pilot - www.eco-pilot.com.pdf}
+
+\includepdf[pages=-,pagecommand={\section*{Tableau de bord principal}}]{FireShot Capture 023 - Eco-Pilot - www.eco-pilot.com.pdf}
+
+\includepdf[pages=-,pagecommand={\section*{Gestion des projets}}]{FireShot Capture 024 - Eco-Pilot - www.eco-pilot.com.pdf}
+
+\includepdf[pages=-,pagecommand={\section*{Gestion des articles}}]{FireShot Capture 025 - Eco-Pilot - www.eco-pilot.com.pdf}
+
+\includepdf[pages=-,pagecommand={\section*{Gestion des utilisateurs}}]{FireShot Capture 026 - Eco-Pilot - www.eco-pilot.com.pdf}
+
 \section{Extraits de code}
 
 \begin{verbatim}
